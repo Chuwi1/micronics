@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spawns>
+	<spawn_map map_id="301230000">
+		<!-- Flourishing Idium -->
+		<spawn npc_id="730884">
+			<spot x="209.54634" y="206.6421" z="267.67316"/>
+		</spawn>
+	</spawn_map>
+</spawns>

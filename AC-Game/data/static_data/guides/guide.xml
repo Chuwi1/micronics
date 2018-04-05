@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<guides xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="guide.xsd">
+    <!-- Asmodians -->
+    <guide title="adventurers_guide3_asmo" level="3" race="ASMODIANS" rewardCount="2">
+        <message>
+            <![CDATA[<BR><BR>
+			Greetings. You may not know me, but you will soon
+			enough. Perhaps I can offer some advice? Take or
+			leave it as you will, but either way, I suggest you listen.
+			You may already know that you can rest to regain lost
+			health, but there are also healing items that can restore
+			additional health as time passes. That gets you back in
+			the hunt much quicker! Try one sometime, and see for
+			yourself. In the meantime, try speaking to Kaindal at
+			Aldelle Village--he might have some work for you.
+			<Br><Br><Br><Br>
+			Until next time,
+			<Br><Br><Br><Br>
+			~A friend
+			<br><br>]]>
+        </message>
+        <reward_info>Por favor seleccione dos item (Ctrl+clic).</reward_info>
+		<select>A friend, eh...?</select>
+		<survey itemId="164002118" count="5"/> <!-- [Event] Rx: Castafodin -->
+		<survey itemId="164002117" count="5"/> <!-- [Event] Rx: Blitzopan -->
+		<survey itemId="164002116" count="5"/> <!-- [Event] Rx: Accelerox -->
+    </guide>
+    <guide title="adventurers_guide8_asmo" level="8" race="ASMODIANS" rewardCount="2">
+        <message>
+            <![CDATA[<BR><BR>
+			So try as they might, the shackles of your past cannot
+			hold you any longer. Know that the Asmodians know
+			your name. Know that you are one of us. Know that we
+			are one with you. We are kin.
+			<br><br><br><br>
+			Walk strong. Let blood boil within your veins, and use
+			the steel of our spirit to strengthen your conviction.
+			The cowards will fall before you like Elyos flowers
+			under Asmodian rain.
+			<br><br><br><br>
+			Blood for blood!
+			<br><br><br><br>
+			A friend.
+			<br><br>]]>
+        </message>
+        <reward_info>Por favor seleccione dos item (Ctrl+clic).</reward_info>
+		<select>Blood for blood!</select>
+		<survey itemId="164002118" count="5"/> <!-- [Event] Rx: Castafodin -->
+		<survey itemId="164002117" count="5"/> <!-- [Event] Rx: Blitzopan -->
+		<survey itemId="164002116" count="5"/> <!-- [Event] Rx: Accelerox -->
+    </guide>
+    <guide title="adventurers_guide64_asmo" level="12" race="ASMODIANS" rewardCount="2">
+        <message><![CDATA[<BR><BR>
+			Congratulations!
+			<br><br>]]>
+        </message>
+        <reward_info>Por favor seleccione dos item (Ctrl+clic).</reward_info>
+		<select>Blood for blood!</select>
+		<survey itemId="164002118" count="5"/> <!-- [Event] Rx: Castafodin -->
+		<survey itemId="164002117" count="5"/> <!-- [Event] Rx: Blitzopan -->
+		<survey itemId="164002116" count="5"/> <!-- [Event] Rx: Accelerox -->
+    </guide>
+    <guide title="adventurers_guide14_asmo" level="14" race="ASMODIANS" rewardCount="1">
+        <message>
+            <![CDATA[<BR><BR>
+			So try as they might, the shackles of your past cannot
+			hold you any longer. Know that the Asmodians know
+			your name. Know that you are one of us. Know that we
+			are one with you. We are kin.
+			<br><br><br><br>
+			Walk strong. Let blood boil within your veins, and use
+			the steel of our spirit to strengthen your conviction.
+			The cowards will fall before you like Elyos flowers
+			under Asmodian rain.
+			<br><br><br><br>
+			Blood for blood!
+			<br><br><br><br>
+			~Munin.
+			<br><br>]]>
+        </message>
+		<select>Blood for blood!</select>
+		<survey itemId="190100010" count="1"/>
+    </guide>
+	<guide title="adventurers_guide18_asmo" level="18" race="ASMODIANS" rewardCount="1">
+        <message>
+            <![CDATA[<BR><BR>
+                   On behalf of the entire Server staff, enjoy the rewards. Please recommend us!
+                    <br><br>]]>
+        </message>
+		<select>Blood for blood!</select>
+		<survey itemId="169620159" count="1"/>
+    </guide>
+	<guide title="adventurers_guide20_asmo" level="20" race="ASMODIANS" rewardCount="1">
+		<message>
+			<![CDATA[<BR><BR>
+			Congratulations!
+			<br><br>]]>
+		</message>
+		<select>Blood for blood!</select>
+		<survey itemId="164000336" count="1"/> <!-- Abbey Return Stone (30 days) -->
+	</guide>
+	<guide title="adventurers_guide25_asmo" level="25" race="ASMODIANS" rewardCount="2">
+        <message>
+            <![CDATA[<BR><BR>
+                   On behalf of the entire Server staff, enjoy the rewards. Please recommend us!
+                    <br><br>]]>
+        </message>
+        <reward_info>Por favor seleccione dos item (Ctrl+clic).</reward_info>
+		<select>Blood for blood!</select>
+		<survey itemId="164002118" count="50"/> <!-- [Event] Rx: Castafodin -->
+		<survey itemId="164002117" count="50"/> <!-- [Event] Rx: Blitzopan -->
+		<survey itemId="164002116" count="50"/> <!-- [Event] Rx: Accelerox -->
+    </guide>
+	<guide title="adventurers_guide40_asmo" level="40" race="ASMODIANS" rewardCount="1">
+        <message>
+            <![CDATA[<BR><BR>
+                   On behalf of the entire Server staff, enjoy the rewards. Please recommend us!
+                    <br><br>]]>
+        </message>
+		<select>Blood for blood!</select>
+		<survey itemId="169620159" count="2"/>
+    </guide>
+	<guide title="adventurers_guide41_asmo" level="41" race="ASMODIANS" rewardCount="2">
+        <message>
+            <![CDATA[<BR><BR>
+                   On behalf of the entire Server staff, enjoy the rewards. Please recommend us!
+                    <br><br>]]>
+        </message>
+		<reward_info>Por favor seleccione dos item (Ctrl+clic).</reward_info>
+		<select>Blood for blood!</select>
+		<survey itemId="121001354" count="1"/>
+		<survey itemId="121001355" count="1"/>
+		<survey itemId="121001356" count="1"/>
+		<survey itemId="120001480" count="1"/>
+		<survey itemId="120001482" count="1"/>
+		<survey itemId="120001481" count="1"/>
+		<survey itemId="122001623" count="1"/>
+		<survey itemId="122001624" count="1"/>
+		<survey itemId="122001625" count="1"/>
+		<survey itemId="123001403" count="1"/>
+		<survey itemId="123001405" count="1"/>
+		<survey itemId="123001404" count="1"/>
+    </guide>
+	<guide title="adventurers_guide42_asmo" level="42" race="ASMODIANS" rewardCount="1">
+		<message>
+			<![CDATA[<BR><BR>
+			Congratulations!
+			<br><br>]]>
+		</message>
+		<select>Blood for blood!</select>
+		<survey itemId="186000236" count="100"/> <!-- Blood Mark -->
+	</guide>
+	<!-- Armas -->
+	<guide title="adventurers_guide55_asmo" level="55" race="ASMODIANS" rewardCount="1">
+		<message>
+			<![CDATA[<BR><BR>
+			Congratulations!
+			<br><br>]]>
+		</message>
+		<reward_info>Por favor seleccione un item.</reward_info>
+		<select>Blood for blood!</select>
+		<survey itemId="100201136" count="1"/>
+		<survey itemId="100001283" count="1"/>
+		<survey itemId="100100978" count="1"/>
+		<survey itemId="100900981" count="1"/>
+		<survey itemId="101300939" count="1"/>
+		<survey itemId="101501006" count="1"/>
+		<survey itemId="101701020" count="1"/>
+		<survey itemId="101800831" count="1"/>
+		<survey itemId="101900835" count="1"/>
+		<survey itemId="100601048" count="1"/>
+		<survey itemId="100500994" count="1"/>
+		<survey itemId="102000869" count="1"/>
+	</guide>
+   <!-- Elyos -->
+    <guide title="adventurers_guide3_ely" level="3" race="ELYOS" rewardCount="1">
+        <message>
+            <![CDATA[<BR><BR>
+			Greetings, child. You may not realize this yet, but you
+			are very important to me& and to all Elysea. So I will do
+			my best to help you as you travel these lands. Make
+			your way to Akarios Village. You will find a Bind Point
+			there. And take this with you& it is a gift of sorts for
+			your journey. May Ariel's light protect you...and
+			illuminate your past.
+			<br><br>]]>
+        </message>
+		<reward_info>Por favor seleccione dos item (Ctrl+clic).</reward_info>
+        <select>A disembodied voice?!</select>
+		<survey itemId="164002118" count="5"/> <!-- [Event] Rx: Castafodin -->
+		<survey itemId="164002117" count="5"/> <!-- [Event] Rx: Blitzopan -->
+		<survey itemId="164002116" count="5"/> <!-- [Event] Rx: Accelerox -->
+    </guide>
+    <guide title="adventurers_guide8_ely" level="8" race="ELYOS" rewardCount="2">
+        <message>
+            <![CDATA[<BR><BR>
+			Greetings, youngling. You have come a long way since
+			you first opened your eyes. I speak to you now
+			because I sense you will soon find your way to the
+			Kabarah Strip Mine and the Agaric Spore Road...and
+			one step closer to your truth. Be wary as well as open,
+			child, for you may meet a familiar face on an unfamiliar
+			road.
+			<br><br>
+			Farewell for now.
+			<br><br>]]>
+        </message>
+		<reward_info>Por favor seleccione dos item (Ctrl+clic).</reward_info>
+        <select>I will be wary and open.</select>
+		<survey itemId="164002118" count="5"/> <!-- [Event] Rx: Castafodin -->
+		<survey itemId="164002117" count="5"/> <!-- [Event] Rx: Blitzopan -->
+		<survey itemId="164002116" count="5"/> <!-- [Event] Rx: Accelerox -->
+    </guide>
+	<guide title="adventurers_guide12_ely" level="12" race="ELYOS" rewardCount="2">
+        <message><![CDATA[<BR><BR>
+			Congratulations!
+			<br><br>]]>
+        </message>
+        <reward_info>Por favor seleccione dos item (Ctrl+clic).</reward_info>
+        <select>Click here to close window</select>
+        <survey itemId="164002118" count="5"/> <!-- [Event] Rx: Castafodin -->
+		<survey itemId="164002117" count="5"/> <!-- [Event] Rx: Blitzopan -->
+		<survey itemId="164002116" count="5"/> <!-- [Event] Rx: Accelerox -->
+    </guide>
+    <guide title="adventurers_guide14_ely" level="14" race="ELYOS" rewardCount="1">
+        <message>
+            <![CDATA[<BR><BR>
+			Daeva, I have admired your courage since you were sent to me. 
+			For your deeds to this point, you deserve another reward. Let it aid
+			you as we bring peace to Atreia once and for all!
+			<Br><Br>
+			~Spatalos
+			<br><br>]]>
+        </message>
+        <select>For the light!</select>
+        <survey itemId="190100010" count="1"/>
+    </guide>
+	<guide title="adventurers_guide20_ely" level="20" race="ELYOS" rewardCount="1">
+		<message>
+			<![CDATA[<BR><BR>
+			Congratulations!
+			<br><br>]]>
+		</message>
+		<select>Oh, shiny gear!</select>
+		<survey itemId="164000335" count="1"/> <!-- Abbey Return Stone (30 days) -->
+	</guide>
+	<guide title="adventurers_guide25_ely" level="25" race="ELYOS" rewardCount="2">
+        <message>
+            <![CDATA[<BR><BR>
+                   On behalf of the entire Server staff, enjoy the rewards. Please recommend us!
+                    <br><br>]]>
+        </message>
+		<reward_info>Por favor seleccione dos item (Ctrl+clic).</reward_info>
+        <select>Oh, shiny gear!</select>
+		<survey itemId="164002118" count="50"/> <!-- [Event] Rx: Castafodin -->
+		<survey itemId="164002117" count="50"/> <!-- [Event] Rx: Blitzopan -->
+		<survey itemId="164002116" count="50"/> <!-- [Event] Rx: Accelerox -->
+    </guide>
+	<guide title="adventurers_guide42_ely" level="42" race="ELYOS" rewardCount="1">
+		<message>
+			<![CDATA[<BR><BR>
+			Congratulations!
+			<br><br>]]>
+		</message>
+		<select>For the light!</select>
+		<survey itemId="186000236" count="100"/> <!-- Blood Mark -->
+	</guide>
+	<guide title="adventurers_guide55_ely" level="55" race="ELYOS" rewardCount="1">
+		<message>
+			<![CDATA[<BR><BR>
+			Congratulations!
+			<br><br>]]>
+		</message>
+		<reward_info>Por favor seleccione un item.</reward_info>
+		<select>For the light!</select>
+		<survey itemId="100201136" count="1"/>
+		<survey itemId="100001283" count="1"/>
+		<survey itemId="100100978" count="1"/>
+		<survey itemId="100900981" count="1"/>
+		<survey itemId="101300939" count="1"/>
+		<survey itemId="101501006" count="1"/>
+		<survey itemId="101701020" count="1"/>
+		<survey itemId="101800831" count="1"/>
+		<survey itemId="101900835" count="1"/>
+		<survey itemId="100601048" count="1"/>
+		<survey itemId="100500994" count="1"/>
+		<survey itemId="102000869" count="1"/>
+	</guide>
+</guides>

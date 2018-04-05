@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spawns>
+    <spawn_map map_id="120010000">
+        <!-- Gaster -->
+        <spawn npc_id="798312" respawn_time="295">
+            <spot x="1212.47" y="1484.05" z="213.963" h="18"/>
+        </spawn>
+        <!-- Albanis -->
+        <spawn npc_id="798313" respawn_time="295">
+            <spot x="1204.70" y="1554.39" z="213.963" h="81"/>
+        </spawn>
+		<!-- Training Dummy -->
+		<spawn npc_id="700581" respawn_time="295" difficult_id="0" custom="true">
+            <spot x="1627.9382" y="1427.4003" z="193.12712" h="90"/>
+            <spot x="1619.9034" y="1427.503" z="193.12733" h="90"/>
+            <spot x="1610.8276" y="1427.4147" z="193.12756" h="89"/>
+        </spawn>
+    </spawn_map>
+</spawns>
