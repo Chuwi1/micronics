@@ -46,7 +46,7 @@ public class EngulfedOphidanBridgeService
     public static final byte minLevel = 60, capLevel = 66;
     public static final int maskId = 108;
     public static final int InstanceMapId = 301310000;
-	
+    
 	public void initEngulfedOphidan() {
 		String[] times = AutoGroupConfig.OPHIDAN_TIMES.split("\\|");
         for (String cron : times) {
@@ -71,10 +71,7 @@ public class EngulfedOphidanBridgeService
                 while (iter.hasNext()) {
                     Player player = iter.next();
                     if (player.getLevel() > minLevel) {
-                        int instanceMaskId = getInstanceMaskId(player);
-                        if (instanceMaskId > 0) {
-                            PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, SM_AUTO_GROUP.wnd_EntryIcon, true));
-                        }
+                         PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(maskId, SM_AUTO_GROUP.wnd_EntryIcon, true));
                     }
                 }
             }
@@ -88,12 +85,9 @@ public class EngulfedOphidanBridgeService
         while (iter.hasNext()) {
             Player player = iter.next();
             if (player.getLevel() > minLevel && player.getLevel() < capLevel) {
-                int instanceMaskId = getInstanceMaskId(player);
-                if (instanceMaskId > 0) {
-                    PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, SM_AUTO_GROUP.wnd_EntryIcon));
-					//You can now participate in the Ophidan Bridge battle.
-                    PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_INSTANCE_OPEN_OPHIDAN_WAR);
-                }
+                PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(maskId, SM_AUTO_GROUP.wnd_EntryIcon));
+				//You can now participate in the Ophidan Bridge battle.
+                PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_INSTANCE_OPEN_OPHIDAN_WAR);
             }
         }
     }
@@ -119,9 +113,7 @@ public class EngulfedOphidanBridgeService
     }
 	
     public void showWindow(Player player, byte instanceMaskId) {
-        if (getInstanceMaskId(player) != instanceMaskId) {
-            return;
-        } if (!this.playersWithCooldown.contains(player.getObjectId())) {
+    	if (!playersWithCooldown.contains(player.getObjectId())) {
             PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId));
         }
     }
@@ -133,4 +125,18 @@ public class EngulfedOphidanBridgeService
 	public static EngulfedOphidanBridgeService getInstance() {
 		return SingletonHolder.instance;
 	}
+	
+	private boolean isInInstance(Player player) {
+    	if (player.isInInstance()) {
+    		return true;
+    	}
+        return false;
+    }
+	
+	public boolean canPlayerJoin(Player player) {
+		if (registerAvailable && player.getLevel() > minLevel && player.getLevel() < capLevel && !hasCoolDown(player) && !isInInstance(player)) {
+			 return true;
+		}
+		return false;
+    }
 }

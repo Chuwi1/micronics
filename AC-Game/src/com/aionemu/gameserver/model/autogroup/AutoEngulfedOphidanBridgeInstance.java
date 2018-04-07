@@ -45,7 +45,7 @@ public class AutoEngulfedOphidanBridgeInstance extends AutoInstance
 			EntryRequestType ert = searchInstance.getEntryRequestType();
 			List<AGPlayer> playersByRace = getAGPlayersByRace(player.getRace());
 			if (ert.isGroupEntry()) {
-				if (searchInstance.getMembers().size() + playersByRace.size() > 2) {
+				if (searchInstance.getMembers().size() + playersByRace.size() > 6) {
 					return AGQuestion.FAILED;
 				}
 				for (Player member : player.getPlayerGroup2().getOnlineMembers()) {
@@ -54,7 +54,7 @@ public class AutoEngulfedOphidanBridgeInstance extends AutoInstance
 					}
 				}
 			} else {
-				if (playersByRace.size() >= 2) {
+				if (playersByRace.size() >= 6) {
 					return AGQuestion.FAILED;
 				}
 				players.put(player.getObjectId(), new AGPlayer(player));

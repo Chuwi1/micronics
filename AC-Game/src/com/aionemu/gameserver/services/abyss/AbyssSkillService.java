@@ -76,7 +76,11 @@ public class AbyssSkillService {
 
 enum AbyssSkills {
 
-    SUPREME_COMMANDER(Race.ELYOS, AbyssRankEnum.SUPREME_COMMANDER, 11889, 11898, 11900, 11903, 11904, 11905, 11906),
+	SUPREME_COMMANDER(Race.ELYOS, AbyssRankEnum.SUPREME_COMMANDER, 0, 0, 0, 0, 0, 0, 0),
+	SUPREME_COMMANDER_A(Race.ASMODIANS, AbyssRankEnum.SUPREME_COMMANDER, 0, 0, 0, 0, 0, 0, 0);
+	
+	/*
+	SUPREME_COMMANDER(Race.ELYOS, AbyssRankEnum.SUPREME_COMMANDER, 11889, 11898, 11900, 11903, 11904, 11905, 11906),
     COMMANDER(Race.ELYOS, AbyssRankEnum.COMMANDER, 11888, 11898, 11900, 11903, 11904),
     GREAT_GENERAL(Race.ELYOS, AbyssRankEnum.GREAT_GENERAL, 11887, 11897, 11899, 11903),
     GENERAL(Race.ELYOS, AbyssRankEnum.GENERAL, 11886, 11896, 11899),
@@ -85,7 +89,9 @@ enum AbyssSkills {
     COMMANDER_A(Race.ASMODIANS, AbyssRankEnum.COMMANDER, 11893, 11898, 11902, 11903, 11904),
     GREAT_GENERAL_A(Race.ASMODIANS, AbyssRankEnum.GREAT_GENERAL, 11892, 11897, 11901, 11903),
     GENERAL_A(Race.ASMODIANS, AbyssRankEnum.GENERAL, 11891, 11896, 11901),
-    STAR5_OFFICER_A(Race.ASMODIANS, AbyssRankEnum.STAR5_OFFICER, 11890, 11895);
+    STAR5_OFFICER_A(Race.ASMODIANS, AbyssRankEnum.STAR5_OFFICER, 11890, 11895); 
+	 */
+	
     private int[] skills;
     private AbyssRankEnum rankenum;
     private Race race;
@@ -110,7 +116,7 @@ enum AbyssSkills {
                 return aSkills.skills;
             }
         }
-        LoggerFactory.getLogger(AbyssSkills.class).warn("No abyss skills for: " + race + " " + rank);
+        LoggerFactory.getLogger(AbyssSkills.class).warn("Sin habilidades de abismo para: " + race + " " + rank);
         return new int[0];
     }
 }

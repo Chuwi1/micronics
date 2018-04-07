@@ -115,18 +115,55 @@ public class DialogService {
         if (questId == 0) {
             switch (DialogAction.getActionByDialogId(dialogId)) {
                 case BUY: {
+                	//New 07/04/2018 CUSTOM SHOP POR RANGO
+                	switch (npc.getNpcId()) {    
+                		case 802215:
+                		case 802217:
+                		case 798715:
+                		case 798717:
+                			if (player.getAbyssRank().getRank().getId() < AbyssRankEnum.STAR1_OFFICER.getId() && !player.isGM()) {
+                				TradeListTemplate tradeListTemplate = DataManager.TRADE_LIST_DATA.getTradeListTemplate(npc.getNpcId());
+                                if (tradeListTemplate == null) {
+                                    PacketSendUtility.sendMessage(player, "Buy list is missing!!");
+                                    break;
+                                }
+                                int tradeModifier = tradeListTemplate.getSellPriceRate();
+                                PacketSendUtility.sendPacket(player, new SM_TRADELIST(player, npc, tradeListTemplate, PricesService.getVendorBuyModifier() * tradeModifier / 100));
+                			} else {
+                				PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(targetObjectId, 1011));
+                			}
+                			break;
+                		case 802218:
+                		case 798716:
+                		case 802216:
+                		case 798714:
+                			if (player.getAbyssRank().getRank().getId() < AbyssRankEnum.GENERAL.getId() && !player.isGM()) {
+                				TradeListTemplate tradeListTemplate = DataManager.TRADE_LIST_DATA.getTradeListTemplate(npc.getNpcId());
+                                if (tradeListTemplate == null) {
+                                    PacketSendUtility.sendMessage(player, "Buy list is missing!!");
+                                }
+                                int tradeModifier = tradeListTemplate.getSellPriceRate();
+                                PacketSendUtility.sendPacket(player, new SM_TRADELIST(player, npc, tradeListTemplate, PricesService.getVendorBuyModifier() * tradeModifier / 100));
+                			} else {
+                				PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(targetObjectId, 1011));
+                			}
+                			break;
+                	default:
                     TradeListTemplate tradeListTemplate = DataManager.TRADE_LIST_DATA.getTradeListTemplate(npc.getNpcId());
                     if (tradeListTemplate == null) {
                         PacketSendUtility.sendMessage(player, "Buy list is missing!!");
-                        break;
                     }
                     int tradeModifier = tradeListTemplate.getSellPriceRate();
-                    PacketSendUtility.sendPacket(player, new SM_TRADELIST(player, npc, tradeListTemplate, PricesService.getVendorBuyModifier()
-                            * tradeModifier / 100));
+                    PacketSendUtility.sendPacket(player, new SM_TRADELIST(player, npc, tradeListTemplate, PricesService.getVendorBuyModifier() * tradeModifier / 100));
+                    }
                     break;
                 }
                 case SELL: {
-                    PacketSendUtility.sendPacket(player, new SM_SELL_ITEM(targetObjectId, PricesService.getVendorSellModifier(player.getRace())));
+                	if (player.isInPlayerMode(PlayerMode.RIDE)) { //New 07/04/2018
+    				    PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_CANT_SELL_WHILE_IN_RIDE);
+    					return;
+    				}
+                	PacketSendUtility.sendPacket(player, new SM_SELL_ITEM(targetObjectId, PricesService.getVendorSellModifier(player.getRace())));
                     break;
                 }
                 case OPEN_STIGMA_WINDOW: { // stigma
@@ -499,25 +536,25 @@ public class DialogService {
                         switch (npc.getNpcId()) {
                             case 802437:
                                 if (player.getAbyssRank().getRank().getId() < AbyssRankEnum.GENERAL.getId() && !player.isGM()) {
-                                    PacketSendUtility.sendMessage(player, "You cant enter this location");
+                                	PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(targetObjectId, 1011)); //no rank msg
                                     return;
                                 }
-                                TeleportService2.teleportTo(player, 110070000, 503.50354F, 416.99362F, 126.78963F, (byte) 30);
+                                TeleportService2.teleportTo(player, 110070000, 503.50354F, 416.99362F, 126.78963F, (byte) 30, TeleportAnimation.BEAM_ANIMATION);
                                 break;
                             case 802438:
-                                TeleportService2.teleportTo(player, 110070000, 503.60794F, 410.61899F, 126.78963F, (byte) 90);
+                                TeleportService2.teleportTo(player, 110070000, 503.60794F, 410.61899F, 126.78963F, (byte) 90, TeleportAnimation.BEAM_ANIMATION);
                         }
                     } else {
                         switch (npc.getNpcId()) {
                             case 802439:
                                 if (player.getAbyssRank().getRank().getId() < AbyssRankEnum.GENERAL.getId() && !player.isGM()) {
-                                    PacketSendUtility.sendMessage(player, "You cant enter this location");
+                                	PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(targetObjectId, 1011)); //no rank msg
                                     return;
                                 }
-                                TeleportService2.teleportTo(player, 120080000, 386.42404F, 250.28336F, 93.129425F, (byte) 60);
+                                TeleportService2.teleportTo(player, 120080000, 386.42404F, 250.28336F, 93.129425F, (byte) 60, TeleportAnimation.BEAM_ANIMATION);
                                 break;
                             case 802440:
-                                TeleportService2.teleportTo(player, 120080000, 392.75845F, 250.5977F, 93.129425F, (byte) 120);
+                                TeleportService2.teleportTo(player, 120080000, 392.75845F, 250.5977F, 93.129425F, (byte) 120, TeleportAnimation.BEAM_ANIMATION);
                         }
                     }
                     break;

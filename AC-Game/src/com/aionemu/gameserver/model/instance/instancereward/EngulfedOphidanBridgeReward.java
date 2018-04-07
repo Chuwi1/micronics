@@ -1,6 +1,5 @@
 package com.aionemu.gameserver.model.instance.instancereward;
 
-import com.aionemu.commons.utils.Rnd;
 import com.aionemu.gameserver.model.Race;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.geometry.Point3D;
@@ -162,15 +161,8 @@ public class EngulfedOphidanBridgeReward extends InstanceReward<EngulfedOphidanB
         instance.doOnAllPlayers(new Visitor<Player>() {
             @Override
             public void visit(Player player) {
-                switch (player.getWorldId()) {
-					case 301210000: //Engulfed Ophidan Bridge 4.7
-					    PacketSendUtility.sendPacket(player, new SM_INSTANCE_SCORE(type, getTime(), getInstanceReward(), object));
-					break;
-					case 301670000: //Ophidan Warpath 5.1
-					    PacketSendUtility.sendPacket(player, new SM_INSTANCE_SCORE(type, getTime2(), getInstanceReward(), object));
-					break;
-				}
-            }
+				PacketSendUtility.sendPacket(player, new SM_INSTANCE_SCORE(type, getTime(), getInstanceReward(), object));
+			}
         });
     }
 	
@@ -180,16 +172,6 @@ public class EngulfedOphidanBridgeReward extends InstanceReward<EngulfedOphidanB
             return (int) (90000 - result);
         } else if (result < 1800000) { //30-Mins
             return (int) (1800000 - (result - 90000));
-        }
-        return 0;
-    }
-	
-	public int getTime2() {
-        long result = System.currentTimeMillis() - instanceTime;
-        if (result < 90000) {
-            return (int) (90000 - result);
-        } else if (result < 1200000) { //20-Mins
-            return (int) (1200000 - (result - 90000));
         }
         return 0;
     }

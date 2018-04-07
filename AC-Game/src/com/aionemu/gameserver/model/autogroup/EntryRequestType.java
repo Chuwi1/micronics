@@ -36,7 +36,8 @@ public enum EntryRequestType {
 
     NEW_GROUP_ENTRY((byte) 0),
     QUICK_GROUP_ENTRY((byte) 1),
-    GROUP_ENTRY((byte) 2);
+    GROUP_ENTRY((byte) 2),
+	SPECIAL_PURPOSE((byte) 3);
     private byte id;
 
     private EntryRequestType(byte id) {
@@ -54,6 +55,10 @@ public enum EntryRequestType {
     public boolean isGroupEntry() {
         return id == 2;
     }
+    
+    public boolean isSpecialPurpose() {
+		return id == 3;
+	}
 
     public static EntryRequestType getTypeById(byte id) {
         for (EntryRequestType ert : values()) {

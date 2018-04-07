@@ -795,7 +795,7 @@ public class StatFunctions {
 						    break;
 						case TEMPLAR : damages *= 0.9f;
 						    break;
-						case RANGER : damages *= 0.7f;
+						case RANGER : damages *= 0.9f;
 						    break;
 						default: return damages;		
 						}

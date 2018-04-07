@@ -71,7 +71,7 @@ public class AutoGeneralInstance extends AutoInstance {
                 int size = players.size();
                 size -= clericSize;
                 size -= templarSize;
-                if (size >= 4) {
+                if (size >= 2) {
                     return AGQuestion.FAILED;
                 }
             }

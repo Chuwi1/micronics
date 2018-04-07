@@ -54,7 +54,7 @@ public class AutoKamarBattlefieldInstance extends AutoInstance {
             EntryRequestType ert = searchInstance.getEntryRequestType();
             List<AGPlayer> playersByRace = getAGPlayersByRace(player.getRace());
             if (ert.isGroupEntry()) {
-                if (searchInstance.getMembers().size() + playersByRace.size() > 6) {
+                if (searchInstance.getMembers().size() + playersByRace.size() > 12) {
                     return AGQuestion.FAILED;
                 }
                 for (Player member : player.getPlayerGroup2().getOnlineMembers()) {
@@ -63,7 +63,7 @@ public class AutoKamarBattlefieldInstance extends AutoInstance {
                     }
                 }
             } else {
-                if (playersByRace.size() >= 6) {
+                if (playersByRace.size() >= 12) {
                     return AGQuestion.FAILED;
                 }
                 players.put(player.getObjectId(), new AGPlayer(player));

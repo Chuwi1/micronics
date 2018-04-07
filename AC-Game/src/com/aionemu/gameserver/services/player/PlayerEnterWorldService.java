@@ -717,44 +717,31 @@ public final class PlayerEnterWorldService {
                         }
                     }
                 }
-            }
-
-            for (Item item : player.getEquipment().getEquippedItems()) {
-                if (item.getExpireTime() > 0) {
-                    ExpireTimerTask.getInstance().addTask(item, player);
-                }
-            }
-
-            player.getEquipment().checkRankLimitItems(); // Remove items after offline changed rank
-
-            for (Motion motion : player.getMotions().getMotions().values()) {
-                if (motion.getExpireTime() != 0) {
-                    ExpireTimerTask.getInstance().addTask(motion, player);
-                }
-            }
-
-            for (Emotion emotion : player.getEmotions().getEmotions()) {
-                if (emotion.getExpireTime() != 0) {
-                    ExpireTimerTask.getInstance().addTask(emotion, player);
-                }
-            }
-
-            for (Title title : player.getTitleList().getTitles()) {
-                if (title.getExpireTime() != 0) {
-                    ExpireTimerTask.getInstance().addTask(title, player);
-                }
-            }
-
-            if (player.getHouseRegistry() != null) {
-                for (HouseObject<?> obj : player.getHouseRegistry().getObjects()) {
-                    if (obj.getPersistentState() == PersistentState.DELETED) {
-                        continue;
-                    }
-                    if (obj.getObjectTemplate().getUseDays() > 0) {
-                        ExpireTimerTask.getInstance().addTask(obj, player);
-                    }
-                }
-            }
+            } for (Item item : player.getEquipment().getEquippedItems()) {
+				if (item.getExpireTime() > 0) {
+					ExpireTimerTask.getInstance().addTask(item, player);
+				}
+			} for (Motion motion : player.getMotions().getMotions().values()) {
+				if (motion.getExpireTime() != 0) {
+					ExpireTimerTask.getInstance().addTask(motion, player);
+				}
+			} for (Emotion emotion : player.getEmotions().getEmotions()) {
+				if (emotion.getExpireTime() != 0) {
+					ExpireTimerTask.getInstance().addTask(emotion, player);
+				}
+			} for (Title title : player.getTitleList().getTitles()) {
+				if (title.getExpireTime() != 0) {
+					ExpireTimerTask.getInstance().addTask(title, player);
+				}
+			} if (player.getHouseRegistry() != null) {
+				for (HouseObject<?> obj : player.getHouseRegistry().getObjects()) {
+					if (obj.getPersistentState() != PersistentState.DELETED) {
+						if (obj.getObjectTemplate().getUseDays() > 0) {
+							ExpireTimerTask.getInstance().addTask(obj, player);
+						}
+					}
+				}
+			}
             // scheduler periodic update
             player.getController().addTask(TaskId.PLAYER_UPDATE, ThreadPoolManager.getInstance().scheduleAtFixedRate(new GeneralUpdateTask(player.getObjectId()), PeriodicSaveConfig.PLAYER_GENERAL * 1000,
             PeriodicSaveConfig.PLAYER_GENERAL * 1000));

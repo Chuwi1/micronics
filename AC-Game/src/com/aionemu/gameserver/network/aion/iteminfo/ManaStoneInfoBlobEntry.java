@@ -89,7 +89,7 @@ public class ManaStoneInfoBlobEntry extends ItemBlobEntry {
             writeD(buf, 0); // Idian Stone template ID
             writeC(buf, 0); // polish statset ID
         }
-        writeC(buf, item.getAuthorize());
+        writeC(buf, item.getAuthorize()); // tempering 4.5
 
         writeH(buf, 0);    
         

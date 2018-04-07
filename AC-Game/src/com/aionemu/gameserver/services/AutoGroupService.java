@@ -69,6 +69,7 @@ import com.aionemu.gameserver.services.instance.IdgelDomeService;
 import com.aionemu.gameserver.services.instance.InstanceService;
 import com.aionemu.gameserver.services.instance.IronWallWarFrontService;
 import com.aionemu.gameserver.services.instance.KamarBattlefieldService;
+import com.aionemu.gameserver.services.instance.OphidanBridgeService;
 import com.aionemu.gameserver.services.instance.EngulfedOphidanBridgeService;
 import com.aionemu.gameserver.services.instance.PvPArenaService;
 import com.aionemu.gameserver.spawnengine.SpawnEngine;
@@ -245,9 +246,9 @@ public class AutoGroupService {
             PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(DredgionService.getInstance().getInstanceMaskId(player), 6));
         } else if (KamarBattlefieldService.getInstance().canPlayerJoin(player)) {
             PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(KamarBattlefieldService.maskId, 6));
-        } if (EngulfedOphidanBridgeService.getInstance().isOphidanAvailable() && player.getLevel() > EngulfedOphidanBridgeService.minLevel && player.getLevel() < EngulfedOphidanBridgeService.capLevel && !EngulfedOphidanBridgeService.getInstance().hasCoolDown(player)) {
-			PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(EngulfedOphidanBridgeService.maskId, SM_AUTO_GROUP.wnd_EntryIcon));
-		} else if (IronWallWarFrontService.getInstance().canPlayerJoin(player)) {
+        } else if (EngulfedOphidanBridgeService.getInstance().canPlayerJoin(player)) {
+            PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(EngulfedOphidanBridgeService.maskId, 6));
+        } else if (IronWallWarFrontService.getInstance().canPlayerJoin(player)) {
             PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(IronWallWarFrontService.maskId, 6));
         } else if (IdgelDomeService.getInstance().canPlayerJoin(player)) {
         	PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(IdgelDomeService.maskId, 6));
@@ -264,8 +265,8 @@ public class AutoGroupService {
                     } else if (searchInstance.isKamar() && KamarBattlefieldService.getInstance().isKamarAvailable()) {
                         PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 6));
                     } else if (searchInstance.isOphidan() && EngulfedOphidanBridgeService.getInstance().isOphidanAvailable()) {
-						PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, SM_AUTO_GROUP.wnd_EntryIcon));
-					} else if (searchInstance.isBastion() && IronWallWarFrontService.getInstance().isIronWallAvailable()) {
+                        PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 6));
+                    } else if (searchInstance.isBastion() && IronWallWarFrontService.getInstance().isIronWallAvailable()) {
                         PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 6));
                     } else if (searchInstance.isIdgelDome() && IdgelDomeService.getInstance().isIdgleDomeAvailable()) {
                         PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 6));                        
