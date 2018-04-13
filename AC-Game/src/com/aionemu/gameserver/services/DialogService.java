@@ -117,11 +117,11 @@ public class DialogService {
                 case BUY: {
                 	//New 07/04/2018 CUSTOM SHOP POR RANGO
                 	switch (npc.getNpcId()) {    
-                		case 802215:
-                		case 802217:
-                		case 798715:
-                		case 798717:
-                			if (player.getAbyssRank().getRank().getId() < AbyssRankEnum.STAR1_OFFICER.getId() && !player.isGM()) {
+                		case 804185:
+                		case 804195:
+                			if (player.getAbyssRank().getRank().getId() < AbyssRankEnum.STAR2_OFFICER.getId() && !player.isGM()) {
+                				PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(targetObjectId, 1011));
+                			} else {
                 				TradeListTemplate tradeListTemplate = DataManager.TRADE_LIST_DATA.getTradeListTemplate(npc.getNpcId());
                                 if (tradeListTemplate == null) {
                                     PacketSendUtility.sendMessage(player, "Buy list is missing!!");
@@ -129,8 +129,36 @@ public class DialogService {
                                 }
                                 int tradeModifier = tradeListTemplate.getSellPriceRate();
                                 PacketSendUtility.sendPacket(player, new SM_TRADELIST(player, npc, tradeListTemplate, PricesService.getVendorBuyModifier() * tradeModifier / 100));
-                			} else {
+                			}
+                			break;
+                		case 804186:
+                		case 804196:
+                			if (player.getAbyssRank().getRank().getId() < AbyssRankEnum.STAR4_OFFICER.getId() && !player.isGM()) {
                 				PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(targetObjectId, 1011));
+                			} else {
+                				TradeListTemplate tradeListTemplate = DataManager.TRADE_LIST_DATA.getTradeListTemplate(npc.getNpcId());
+                                if (tradeListTemplate == null) {
+                                    PacketSendUtility.sendMessage(player, "Buy list is missing!!");
+                                    break;
+                                }
+                                int tradeModifier = tradeListTemplate.getSellPriceRate();
+                                PacketSendUtility.sendPacket(player, new SM_TRADELIST(player, npc, tradeListTemplate, PricesService.getVendorBuyModifier() * tradeModifier / 100));
+                			}
+                			break;
+                		case 802215:
+                		//case 802217:
+                		case 798715:
+                		case 798717:
+                			if (player.getAbyssRank().getRank().getId() < AbyssRankEnum.STAR1_OFFICER.getId() && !player.isGM()) {
+                				PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(targetObjectId, 1011));
+                			} else {
+                				TradeListTemplate tradeListTemplate = DataManager.TRADE_LIST_DATA.getTradeListTemplate(npc.getNpcId());
+                                if (tradeListTemplate == null) {
+                                    PacketSendUtility.sendMessage(player, "Buy list is missing!!");
+                                    break;
+                                }
+                                int tradeModifier = tradeListTemplate.getSellPriceRate();
+                                PacketSendUtility.sendPacket(player, new SM_TRADELIST(player, npc, tradeListTemplate, PricesService.getVendorBuyModifier() * tradeModifier / 100));
                 			}
                 			break;
                 		case 802218:
@@ -138,14 +166,15 @@ public class DialogService {
                 		case 802216:
                 		case 798714:
                 			if (player.getAbyssRank().getRank().getId() < AbyssRankEnum.GENERAL.getId() && !player.isGM()) {
+                				PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(targetObjectId, 1011));
+                			} else {
                 				TradeListTemplate tradeListTemplate = DataManager.TRADE_LIST_DATA.getTradeListTemplate(npc.getNpcId());
                                 if (tradeListTemplate == null) {
                                     PacketSendUtility.sendMessage(player, "Buy list is missing!!");
+                                    break;
                                 }
                                 int tradeModifier = tradeListTemplate.getSellPriceRate();
                                 PacketSendUtility.sendPacket(player, new SM_TRADELIST(player, npc, tradeListTemplate, PricesService.getVendorBuyModifier() * tradeModifier / 100));
-                			} else {
-                				PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(targetObjectId, 1011));
                 			}
                 			break;
                 	default:
